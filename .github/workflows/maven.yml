@@ -13,13 +13,15 @@ on:
     inputs:
       name:
         type: choice
-        description: choose browser to run the testcase
+        description: Choose browser
         default: chrome
         required: true
         options:
         - chrome
         - edge
         - firefox
+      environment:
+        type: environment
   push:
     branches: [ "main" ]
   pull_request:
