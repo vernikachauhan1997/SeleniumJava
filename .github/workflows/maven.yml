@@ -9,6 +9,17 @@
 name: Selenium with TestNG - CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: choose browser to run the testcase
+        default: chrome
+        required: true
+        options:
+        - chrome
+        - edge
+        - firefox
   push:
     branches: [ "main" ]
   pull_request:
