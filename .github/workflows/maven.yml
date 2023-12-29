@@ -23,7 +23,7 @@ on:
       environment:
         description: 'Choose env'
         required: true
-        type: environment
+        type: choice
         options:
           - qa
           - dev
