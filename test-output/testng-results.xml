@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="0" failed="4" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-29T16:28:49 IST" name="Default suite" finished-at="2023-12-29T16:29:18 IST" duration-ms="29376">
+    <groups>
+    </groups>
+    <test started-at="2023-12-29T16:28:49 IST" name="Default test" finished-at="2023-12-29T16:29:18 IST" duration-ms="29376">
+      <class name="Test.data">
+        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:27:59 IST" name="suiteSetUp" finished-at="2023-12-29T16:28:49 IST" duration-ms="50178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetUp -->
+        <test-method is-config="true" signature="launchWebsite()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:28:49 IST" name="launchWebsite" finished-at="2023-12-29T16:28:54 IST" duration-ms="4972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebsite -->
+        <test-method signature="parametrizedtestmethod(java.lang.String,java.lang.String)[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:28:54 IST" name="parametrizedtestmethod" data-provider="searchbox" finished-at="2023-12-29T16:29:00 IST" duration-ms="6030" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[categories]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[saree]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: unknown
+at org.openqa.selenium.By$ByClassName.<init>(By.java:309)
+at org.openqa.selenium.By.className(By.java:100)
+at Test.data.parametrizedtestmethod(data.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- parametrizedtestmethod -->
+        <test-method is-config="true" signature="launchWebsite()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:00 IST" name="launchWebsite" finished-at="2023-12-29T16:29:02 IST" duration-ms="1939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebsite -->
+        <test-method signature="parametrizedtestmethod(java.lang.String,java.lang.String)[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:02 IST" name="parametrizedtestmethod" data-provider="searchbox" finished-at="2023-12-29T16:29:08 IST" duration-ms="6015" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[categories]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurti]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: unknown
+at org.openqa.selenium.By$ByClassName.<init>(By.java:309)
+at org.openqa.selenium.By.className(By.java:100)
+at Test.data.parametrizedtestmethod(data.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- parametrizedtestmethod -->
+        <test-method is-config="true" signature="launchWebsite()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:08 IST" name="launchWebsite" finished-at="2023-12-29T16:29:08 IST" duration-ms="452" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebsite -->
+        <test-method signature="parametrizedtestmethod(java.lang.String,java.lang.String)[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:08 IST" name="parametrizedtestmethod" data-provider="searchbox" finished-at="2023-12-29T16:29:14 IST" duration-ms="6004" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[categories]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[smartwatch]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: unknown
+at org.openqa.selenium.By$ByClassName.<init>(By.java:309)
+at org.openqa.selenium.By.className(By.java:100)
+at Test.data.parametrizedtestmethod(data.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- parametrizedtestmethod -->
+        <test-method is-config="true" signature="launchWebsite()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:14 IST" name="launchWebsite" finished-at="2023-12-29T16:29:15 IST" duration-ms="769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebsite -->
+        <test-method signature="writedata()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:15 IST" name="writedata" finished-at="2023-12-29T16:29:18 IST" duration-ms="2976" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[sheetName '' is invalid - character count MUST be greater than or equal to 1 and less than or equal to 31]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: sheetName '' is invalid - character count MUST be greater than or equal to 1 and less than or equal to 31
+at org.apache.poi.ss.util.WorkbookUtil.validateSheetName(WorkbookUtil.java:131)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.createSheet(XSSFWorkbook.java:941)
+at org.apache.poi.xssf.usermodel.XSSFWorkbook.createSheet(XSSFWorkbook.java:108)
+at Test.data.writedata(data.java:73)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writedata -->
+        <test-method is-config="true" signature="suiteteardown()[pri:0, instance:Test.data@4116aac9]" started-at="2023-12-29T16:29:18 IST" name="suiteteardown" finished-at="2023-12-29T16:29:19 IST" duration-ms="587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteteardown -->
+      </class> <!-- Test.data -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
