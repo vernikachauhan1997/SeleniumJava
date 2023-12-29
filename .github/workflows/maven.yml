@@ -50,7 +50,7 @@ jobs:
     - run: chrome --version
     
     - name: Build with Maven
-      run: mvn -B clean test
+      run: mvn -B clean install test
       # run: mvn -B package --file pom.xml
 
     # - name: Copy artifacts
