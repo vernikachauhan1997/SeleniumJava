@@ -20,17 +20,17 @@ on:
           - chrome
           - edge
           - firefox
-      environment:
-        description: 'Choose env'
+      Testcase:
+        description: 'Choose testcase to run'
         required: true
         type: choice
         options:
-          - qa
-          - dev
+          - 'DemoLoginpage'
+          - 'data'
   push:
-    branches: [ "main" ]
+    branches: [ "selenium-java-testng" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "selenium-java-testng" ]
 
 jobs:
   build:
