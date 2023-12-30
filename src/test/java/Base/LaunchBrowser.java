@@ -5,13 +5,15 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.FirefoxOptions;
+import org.openqa.selenium.chrome.EdgeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -20,11 +22,10 @@ public class LaunchBrowser {
 	protected WebDriver driver;
 	String URL = "https://www.meesho.com/";
 	
-	private static final String BROWSER = System.getProperty("browser", "Chrome");
-	
-	@BeforeSuite
-	public void suiteSetUp() {
-		if (BROWSER.equals("Chrome")) {
+	@Parameters("browser")
+	@BeforeClass
+	public void suiteSetUp(@Optional("Chrome") String browser) {
+		if (browser.equals("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--no-sandbox");
@@ -32,13 +33,17 @@ public class LaunchBrowser {
 			options.addArguments("--headless");
 			driver = new ChromeDriver(options);
 			
-		}else if (BROWSER.equals("firefox")) {
+		}else if (browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions options = new FirefoxOptions ();
+			options.setHeadless(true);
+			driver = new FirefoxDriver(options);
 			
-		}else if (BROWSER.equals("edge")) {
+		}else if (browser.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+			EdgeOptions options=new EdgeOptions();
+			options.setHeadless(true);
+			driver=new EdgeDriver(options);
 			
 		}else {
 			throw new RuntimeException("Browser Type Unsupported");
@@ -56,7 +61,7 @@ public class LaunchBrowser {
 	}
 	
 	
-	@AfterSuite
+	@AfterClass
 	public void suiteteardown() {
 		driver.quit();
 	}
