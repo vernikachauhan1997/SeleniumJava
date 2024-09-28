@@ -18,6 +18,8 @@ on:
   pull_request:
     branches:
       - '**'  # Replace with your default branch name
+  schedule:
+    - cron: "30 4 * * 1-5"
 
 jobs:
   build:
