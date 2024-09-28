@@ -13,22 +13,22 @@ on:
           - edge
           - firefox
   push:
-    branches: [ "selenium-java-testng" ]
+    branches:
   pull_request:
-    branches: [ "selenium-java-testng" ]
+    branches:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         browser: [chrome, edge, firefox]  # Define the browsers to test
 
     steps:
-      - name: checkout code
-      - uses: actions/checkout@v3
-      
+      - name: Checkout code  # Ensure proper `uses` for checkout step
+        uses: actions/checkout@v3
+
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
@@ -49,24 +49,22 @@ jobs:
       - name: Verify browser version
         run: |
           if [ "${{ matrix.browser }}" = "chrome" ]; then
-            chrome --version
+            google-chrome --version
           elif [ "${{ matrix.browser }}" = "edge" ]; then
-            edge --version
+            microsoft-edge --version
           elif [ "${{ matrix.browser }}" = "firefox" ]; then
             firefox --version
           fi
-      
+
       - name: Build with Maven
-        run: |
-          mvn clean install
+        run: mvn clean install
 
       - name: Run test
         env:
           BROWSER: ${{ matrix.browser }}  # Pass the browser to your test command
-        run: |
-          mvn clean test -Dbrowser=${{ matrix.browser }}
-      
-      - name: archive artifacts  
+        run: mvn clean test -Dbrowser=${{ matrix.browser }}
+
+      - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Package
