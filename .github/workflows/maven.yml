@@ -14,17 +14,12 @@ on:
           - firefox
   push:
     branches:
-      - '**'
   pull_request:
     branches:
-      - '**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        browser: [chrome, edge, firefox]  # Define the browsers to test
 
     steps:
       - name: Checkout code  # Ensure proper `uses` for checkout step
@@ -34,27 +29,27 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'  # Or your preferred Java version
-          distribution: 'adopt'
+          distribution: 'adopt'  # Or 'temurin', as needed
 
       - name: Set up Chrome (if selected)
-        if: ${{ matrix.browser == 'chrome' }}
+        if: ${{ github.event.inputs.browser == 'chrome' }}
         uses: browser-actions/setup-chrome@latest
 
       - name: Set up Edge (if selected)
-        if: ${{ matrix.browser == 'edge' }}
+        if: ${{ github.event.inputs.browser == 'edge' }}
         uses: browser-actions/setup-edge@latest
 
       - name: Set up Firefox (if selected)
-        if: ${{ matrix.browser == 'firefox' }}
+        if: ${{ github.event.inputs.browser == 'firefox' }}
         uses: browser-actions/setup-firefox@latest
 
       - name: Verify browser version
         run: |
-          if [ "${{ matrix.browser }}" = "chrome" ]; then
+          if [ "${{ github.event.inputs.browser }}" = "chrome" ]; then
             google-chrome --version
-          elif [ "${{ matrix.browser }}" = "edge" ]; then
+          elif [ "${{ github.event.inputs.browser }}" = "edge" ]; then
             microsoft-edge --version
-          elif [ "${{ matrix.browser }}" = "firefox" ]; then
+          elif [ "${{ github.event.inputs.browser }}" = "firefox" ]; then
             firefox --version
           fi
 
@@ -63,8 +58,8 @@ jobs:
 
       - name: Run test
         env:
-          BROWSER: ${{ matrix.browser }}  # Pass the browser to your test command
-        run: mvn clean test -Dbrowser=${{ matrix.browser }}
+          BROWSER: ${{ github.event.inputs.browser }}  # Pass the browser to your test command
+        run: mvn clean test -Dbrowser=${{ github.event.inputs.browser }}
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
