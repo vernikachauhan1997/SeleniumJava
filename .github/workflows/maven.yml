@@ -14,8 +14,10 @@ on:
           - firefox
   push:
     branches:
+      - '**'  # Replace with your default branch name
   pull_request:
     branches:
+      - '**'  # Replace with your default branch name
 
 jobs:
   build:
@@ -31,25 +33,29 @@ jobs:
           java-version: '11'  # Or your preferred Java version
           distribution: 'adopt'  # Or 'temurin', as needed
 
+      - name: Determine Browser
+        id: set_browser
+        run: echo "BROWSER=${{ github.event.inputs.browser || 'chrome' }}" >> $GITHUB_ENV
+
       - name: Set up Chrome (if selected)
-        if: ${{ github.event.inputs.browser == 'chrome' }}
+        if: ${{ env.BROWSER == 'chrome' }}
         uses: browser-actions/setup-chrome@latest
 
       - name: Set up Edge (if selected)
-        if: ${{ github.event.inputs.browser == 'edge' }}
+        if: ${{ env.BROWSER == 'edge' }}
         uses: browser-actions/setup-edge@latest
 
       - name: Set up Firefox (if selected)
-        if: ${{ github.event.inputs.browser == 'firefox' }}
+        if: ${{ env.BROWSER == 'firefox' }}
         uses: browser-actions/setup-firefox@latest
 
       - name: Verify browser version
         run: |
-          if [ "${{ github.event.inputs.browser }}" = "chrome" ]; then
+          if [ "${{ env.BROWSER }}" = "chrome" ]; then
             google-chrome --version
-          elif [ "${{ github.event.inputs.browser }}" = "edge" ]; then
+          elif [ "${{ env.BROWSER }}" = "edge" ]; then
             microsoft-edge --version
-          elif [ "${{ github.event.inputs.browser }}" = "firefox" ]; then
+          elif [ "${{ env.BROWSER }}" = "firefox" ]; then
             firefox --version
           fi
 
@@ -58,8 +64,8 @@ jobs:
 
       - name: Run test
         env:
-          BROWSER: ${{ github.event.inputs.browser }}  # Pass the browser to your test command
-        run: mvn clean test -Dbrowser=${{ github.event.inputs.browser }}
+          BROWSER: ${{ env.BROWSER }}  # Pass the browser to your test command
+        run: mvn clean test -Dbrowser=${{ env.BROWSER }}
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
