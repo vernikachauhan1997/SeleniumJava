@@ -57,12 +57,14 @@ jobs:
           fi
       
       - name: Build with Maven
-        run: mvn clean install
+        run: |
+          mvn clean install
 
       - name: Run test
         env:
           BROWSER: ${{ matrix.browser }}  # Pass the browser to your test command
-        run: mvn clean test -Dbrowser=${{ matrix.browser }}
+        run: |
+          mvn clean test -Dbrowser=${{ matrix.browser }}
       
       - name: archive artifacts  
         uses: actions/upload-artifact@v3
