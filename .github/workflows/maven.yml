@@ -65,8 +65,6 @@ jobs:
         run: mvn clean install
 
       - name: Run test
-        env:
-          BROWSER: ${{ env.BROWSER }}  # Pass the browser to your test command
         run: mvn clean test -Dbrowser=${{ env.BROWSER }}
 
       - name: Archive artifacts
